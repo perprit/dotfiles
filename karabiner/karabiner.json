@@ -4,7 +4,7 @@
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "Left Command + [ to Move Right a Space",
+                        "description": "Mouse Left Button (Left Command + ;) to Move Right a Space",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -19,7 +19,7 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "open_bracket",
+                                    "key_code": "semicolon",
                                     "modifiers": { "mandatory": ["left_command"] }
                                 },
                                 "to": [
@@ -33,7 +33,7 @@
                         ]
                     },
                     {
-                        "description": "Left Command + ] to Move Left a Space",
+                        "description": "Mouse Right Button (Left Command + ') to Move Left a Space",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -48,7 +48,7 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "close_bracket",
+                                    "key_code": "quote",
                                     "modifiers": { "mandatory": ["left_command"] }
                                 },
                                 "to": [
