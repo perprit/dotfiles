@@ -29,3 +29,9 @@ red = "#f85e84"
 blue = "#7accd7"
 teal = "#78dce8"
 peach = "#ef9062"
+
+[ui.sidebar.agents]
+rows = [
+  ["state_icon", "machine", "workspace", "tab"],
+  ["terminal_title"],
+]
