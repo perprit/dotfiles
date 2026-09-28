@@ -1,32 +1,7 @@
--- Leader
+-- leader는 lazy.nvim 부트스트랩 전에 지정해야 한다
 vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+vim.g.maplocalleader = "\\"
 
--- Options
-vim.opt.number = true
-vim.opt.tabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
-vim.opt.smartindent = true
-vim.opt.wrap = false
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
-vim.opt.cursorline = true
-vim.opt.scrolloff = 8
-vim.opt.signcolumn = "yes"
-vim.opt.termguicolors = true
-vim.opt.clipboard = "unnamedplus"
-
--- Bootstrap lazy.nvim
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.uv.fs_stat(lazypath) then
-  vim.fn.system({
-    "git", "clone", "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", lazypath,
-  })
-end
-vim.opt.rtp:prepend(lazypath)
-
--- Load plugins
-require("lazy").setup("plugins")
+require("config.options")
+require("config.lazy")
+require("config.keymaps")

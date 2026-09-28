@@ -1,37 +1,65 @@
+# herdr 설정 (전체 기본값: herdr --default-config)
+# 변경 후 반영: prefix+shift+r 또는 herdr server reload-config
+
+# 알림 방식은 아래 [ui.toast] 에서 정했으므로 첫 실행 안내 생략
 onboarding = false
 
-[ui]
-status_indicators = "symbols"
-
-[ui.toast]
-delivery = "system"
-
+# ── 테마 ─────────────────────────────────────────────────────────
 [theme]
-name = "catppuccin"
+# kitty 의 Sonokai 팔레트를 그대로 쓰도록 호스트 터미널 색을 따른다
+name = "terminal"
 
 [theme.custom]
-accent = "#7accd7"
-panel_bg = "#2d2a2e"
-sidebar_bg = "#211f21"
-active_row_bg = "#37343a"
-selection_bg = "#423f46"
-surface0 = "#37343a"
-surface1 = "#49464e"
-surface_dim = "#3b383e"
-overlay0 = "#605d68"
-overlay1 = "#848089"
-text = "#e3e1e4"
-subtext0 = "#848089"
-mauve = "#ab9df2"
-green = "#9ecd6f"
-yellow = "#e5c463"
-red = "#f85e84"
-blue = "#7accd7"
-teal = "#78dce8"
-peach = "#ef9062"
+# terminal 테마는 Navigate 모드 커서 행 배경이 없어(reset) space 이동 위치가 안 보인다.
+# Sonokai grey_dim 으로 채운다
+selection_bg = "#595f6f"
 
-[ui.sidebar.agents]
-rows = [
-  ["state_icon", "machine", "workspace", "tab"],
-  ["terminal_title"],
-]
+# ── 터미널 ───────────────────────────────────────────────────────
+[terminal]
+# 새 pane/tab 은 현재 pane 의 디렉토리를 따라간다 (kitty 의 --cwd=current 와 동일)
+new_cwd = "follow"
+
+# ── 키 ───────────────────────────────────────────────────────────
+[keys]
+# tmux 기본값 그대로. 다른 키를 원하면 "ctrl+a" 등으로 변경
+prefix = "ctrl+b"
+
+# ── UI ───────────────────────────────────────────────────────────
+[ui]
+# kitty 탭 바와 겹치지 않게, 탭이 하나뿐이면 herdr 탭 줄 숨김
+hide_tab_bar_when_single_tab = true
+# 새 탭 만들 때 이름 묻지 않기
+prompt_new_tab_name = false
+# 에이전트 상태를 색 점 대신 모양이 다른 기호로 표시
+status_indicators = "symbols"
+# kitty 창/탭 제목에 포커스된 pane 의 제목(Claude 세션 제목 등)을 표시
+window_title = "{workspace}: {terminal_title}"
+# pane 이 나뉘어 있을 때 테두리에 에이전트 라벨 표시
+show_agent_labels_on_pane_borders = true
+# kitty 에서 Cmd+클릭으로 URL 열기가 안 되면 false 로 바꾼다
+# mouse_capture = true
+
+# 사이드바 에이전트 목록에 Claude 세션 제목을 한 줄 추가
+[ui.sidebar.agents.rows_by_agent]
+claude = [["state_icon", "workspace", "tab"], ["terminal_title_stripped"]]
+
+# 백그라운드 에이전트가 끝나거나 입력을 기다리면 알림
+[ui.toast]
+# terminal = kitty 에 데스크톱 알림을 요청 (SSH 너머에서도 동작)
+delivery = "terminal"
+
+# ── 세션 ─────────────────────────────────────────────────────────
+[session]
+# 서버 재시작 후 Claude Code 등의 대화 이어서 재개
+# (herdr integration install claude 가 필요)
+resume_agents_on_restore = true
+
+# ── 한글 입력 (실험 기능) ────────────────────────────────────────
+[experimental]
+# prefix 모드 동안 영문 입력기로 잠시 전환 → 한글 상태에서도 ctrl+b 뒤 명령 인식
+switch_ascii_input_source_in_prefix = true
+# Claude Code/Codex 처럼 커서를 직접 그리는 TUI 에서 한글 조합 후보창이 커서를 따라가게 함
+reveal_hidden_cursor_for_cjk_ime = true
+cjk_ime_agents = ["claude", "codex"]
+# kitty 의 beam 커서와 맞춤
+cjk_ime_cursor_shape = "steady_bar"
