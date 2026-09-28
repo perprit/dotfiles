@@ -18,6 +18,23 @@
     "light": "Ayu Light",
     "dark": "Sonokai",
   },
+  // Sonokai 확장에 markdown capture가 없어서 vim sonokai 기준으로 보충
+  "theme_overrides": {
+    "Sonokai": {
+      "syntax": {
+        "title": { "color": "#fc5d7c", "font_weight": 700 },
+        "emphasis": { "font_style": "italic" },
+        "emphasis.strong": { "font_weight": 700 },
+        "strikethrough": { "color": "#7f8490" },
+        "text.literal": { "color": "#9ed072" },
+        "link_text": { "color": "#b39df3" },
+        "link_uri": { "color": "#76cce0", "font_style": "italic" },
+        "punctuation.list_marker": { "color": "#fc5d7c" },
+        "punctuation.embedded": { "color": "#7f8490" },
+        "punctuation.markup": { "color": "#7f8490" },
+      },
+    },
+  },
   "git": {
     "inline_blame": {
       "enabled": true,
