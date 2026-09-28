@@ -38,13 +38,15 @@ readlink "$HOME/.config/kitty"   # $DOTFILES/kitty
 
 | 파일 | 역할 |
 |---|---|
-| `kitty.conf` | 메인 설정 (`include current-theme.conf`, `startup_session startup.conf`) |
-| `current-theme.conf` | Sonokai Shusia 색상 테마 |
-| `startup.conf` | 시작 세션: `~/develop`에서 기본 셸 실행 |
+| `kitty.conf` | 메인 설정 (`include themes/sonokai.conf`, `startup_session startup.conf`, `geninclude ime-ctrl-keys.py`) |
+| `themes/sonokai.conf` | Sonokai(default style) 색상 테마 |
+| `startup.conf` | 시작 세션: `~/dev`에서 기본 셸 실행 |
+| `ime-ctrl-keys.py` | 한글 입력기용 `ctrl+<영문키>` 매핑 생성 스크립트 (`geninclude`, 실행 권한 필요) |
 
 ## 주의사항
 
-- `~/develop` 폴더를 전제로 한다(`startup.conf`, `cmd+t` 등 새 탭 매핑). 없으면 만들거나 경로를 바꾼다.
-- 한글 입력기(두벌식) 대응 매핑이 있다.
-  - `ctrl+ㅋ`, `cmd+ㅊ` 등: 한글 상태에서도 ctrl/cmd 단축키가 동작하게 한다.
-  - `ctrl+ㅠ>{키}`: herdr prefix(`ctrl+b`) 뒤 키를 입력기 조합 없이 `\x02{영문키}`로 바로 보낸다. herdr 바인딩을 추가하면 여기에도 같이 추가해야 한글 상태에서 동작한다. shift 조합은 `ctrl+ㅠ>shift+n`처럼 영문 키 이름으로 쓴다.
+- `~/dev` 폴더를 전제로 한다(`startup.conf`, `cmd+t`/`cmd+n` 등 새 탭·창 매핑). 없으면 만들거나 경로를 바꾼다.
+- 한글 입력기(두벌식) 대응
+  - `ctrl+<영문키>`: `ime-ctrl-keys.py`가 a-z 전체에 `map --allow-fallback=ascii ctrl+{키} send_key ctrl+{키}`를 생성해, 한글 상태에서도 셸·herdr·nvim에 영문 ctrl 조합이 전달된다. 키를 하나씩 추가할 필요 없다.
+  - `cmd+<영문키>`: kitty 기본 단축키는 이미 `--allow-fallback=shifted,ascii`라 따로 매핑하지 않는다. 직접 추가하는 `cmd+` 매핑에는 `--allow-fallback=shifted,ascii`를 붙인다.
+  - herdr prefix(`ctrl+b`) 뒤의 키는 herdr `experimental.switch_ascii_input_source_in_prefix`가 처리한다([herdr/README.md](../herdr/README.md)).
