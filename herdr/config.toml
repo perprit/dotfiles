@@ -9,6 +9,11 @@ onboarding = false
 # kitty 의 Sonokai 팔레트를 그대로 쓰도록 호스트 터미널 색을 따른다
 name = "terminal"
 
+[theme.custom]
+# terminal 테마는 Navigate 모드 커서 행 배경이 없어(reset) space 이동 위치가 안 보인다.
+# Sonokai grey_dim 으로 채운다
+selection_bg = "#595f6f"
+
 # ── 터미널 ───────────────────────────────────────────────────────
 [terminal]
 # 새 pane/tab 은 현재 pane 의 디렉토리를 따라간다 (kitty 의 --cwd=current 와 동일)
