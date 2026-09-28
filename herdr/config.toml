@@ -23,6 +23,15 @@ new_cwd = "follow"
 [keys]
 # tmux 기본값 그대로. 다른 키를 원하면 "ctrl+a" 등으로 변경
 prefix = "ctrl+b"
+# 새 workspace 는 아래 [[keys.command]] 로 ~/dev 에서 만든다.
+# terminal.new_cwd 는 pane/tab 에도 함께 적용되어 workspace 만 따로 정할 수 없다
+new_workspace = ""
+
+[[keys.command]]
+key = "prefix+shift+n"
+type = "shell"
+command = '"$HERDR_BIN_PATH" workspace create --cwd "$HOME/dev" --focus'
+description = "new workspace in ~/dev"
 
 # ── UI ───────────────────────────────────────────────────────────
 [ui]
