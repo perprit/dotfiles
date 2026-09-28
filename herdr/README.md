@@ -36,4 +36,6 @@ herdr config check                          # config: ok
 ## 주의사항
 
 - herdr 설정 UI(`prefix+s`)에서 값을 바꾸면 링크가 일반 파일로 바뀔 수 있다. 바꾼 뒤 `readlink`로 확인하고, 일반 파일이면 내용을 저장소로 옮긴 뒤 다시 링크한다.
-- 키 바인딩(`[keys]`)을 추가하면 한글 입력기 대응을 위해 `kitty/kitty.conf`의 `ctrl+ㅠ>{키}` 매핑도 같이 추가한다 ([kitty/README.md](../kitty/README.md)).
+- 한글 입력기: prefix(`ctrl+b`) 자체는 kitty의 `ime-ctrl-keys.py` 매핑으로, prefix 뒤의 키는 `[experimental] switch_ascii_input_source_in_prefix = true`로 처리한다. `[keys]`에 바인딩을 추가해도 kitty 쪽 매핑을 따로 늘릴 필요 없다.
+- `[session] resume_agents_on_restore = true`는 `herdr integration install claude`로 Claude Code 연동을 설치해야 동작한다.
+- `[theme] name = "terminal"`: kitty의 Sonokai 팔레트를 그대로 따른다.
