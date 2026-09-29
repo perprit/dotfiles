@@ -35,4 +35,4 @@ ls "$HOME/Library/Application Support/Zed/extensions/installed"   # sonokai
 
 - Zed 설정 UI에서 값을 바꾸면 링크가 일반 파일로 바뀔 수 있다. 바꾼 뒤 `readlink`로 확인하고, 일반 파일이면 내용을 저장소로 옮긴 뒤 다시 링크한다.
 - 테마: `theme.dark = "Sonokai"`. kitty·nvim과 같은 Sonokai 팔레트를 쓴다. Sonokai 확장은 다크 변형(Maia, Shusia, Atlantis, Espresso, Andromeda)만 제공한다.
-- 터미널 폰트 `MesloLGM Nerd Font Mono`, `D2Coding`은 따로 설치해야 한다.
+- 폰트: 에디터·터미널 모두 `D2KodingLigature Nerd Font`를 쓴다(크기는 kitty와 같은 13). 따로 설치해야 한다. kitty의 `... Nerd Font Mono`는 한글 폭이 반각이라 Zed에서 글자가 겹치므로 쓰지 않는다.

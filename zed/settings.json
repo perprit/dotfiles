@@ -9,7 +9,9 @@
 {
   "icon_theme": "Zed (Default)",
   "ui_font_size": 16,
-  "buffer_font_size": 15,
+  // Mono 변형은 한글 advance가 반각(500)이라 Zed에서 글자가 겹친다. 전각(1000)인 기본 변형을 쓴다.
+  "buffer_font_family": "D2KodingLigature Nerd Font",
+  "buffer_font_size": 13,
   "auto_install_extensions": {
     "sonokai": true,
   },
@@ -42,9 +44,9 @@
     },
   },
   "terminal": {
-    "font_family": "MesloLGM Nerd Font Mono",
-    "font_fallbacks": ["D2Coding"],
-    "font_size": 14,
+    // kitty와 같은 D2Koding·크기 (Mono 변형은 위 이유로 제외)
+    "font_family": "D2KodingLigature Nerd Font",
+    "font_size": 13,
     "env": {
       "LANG": "en_US.UTF-8",
       "LC_ALL": "en_US.UTF-8",
