@@ -4,7 +4,7 @@
 
 ```sh
 xcode-select --install   # 없을 때만. telescope-fzf-native 빌드에 make/C 컴파일러 필요
-brew install neovim git ripgrep tree-sitter-cli pyrefly
+brew install neovim ripgrep tree-sitter-cli pyrefly
 ```
 
 - Neovim 0.10 이상 (`vim.uv` 사용)
