@@ -4,7 +4,7 @@
 
 ```sh
 brew install --cask kitty
-brew install --cask font-d2coding
+brew install --cask font-d2coding-nerd-font
 ```
 
 ## 적용

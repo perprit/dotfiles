@@ -1,0 +1,2 @@
+zed 1.20.2
+font-d2coding-nerd-font 3.5.1

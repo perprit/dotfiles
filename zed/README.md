@@ -4,6 +4,7 @@
 
 ```sh
 brew install --cask zed
+brew install --cask font-d2coding-nerd-font
 ```
 
 ## 적용
