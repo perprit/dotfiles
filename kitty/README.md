@@ -4,7 +4,7 @@
 
 ```sh
 brew install --cask kitty
-brew install --cask font-d2coding
+brew install --cask font-d2coding-nerd-font
 ```
 
 ## 적용
@@ -40,6 +40,7 @@ readlink "$HOME/.config/kitty"   # $DOTFILES/kitty
 |---|---|
 | `kitty.conf` | 메인 설정 (`include themes/sonokai.conf`, `startup_session startup.conf`, `geninclude ime-ctrl-keys.py`) |
 | `themes/sonokai.conf` | Sonokai(default style) 색상 테마 |
+| `open-actions.conf` | `file://` 링크 클릭 시 텍스트 파일을 `$EDITOR`로 오버레이 창에서 연다 |
 | `startup.conf` | 시작 세션: `~/dev`에서 기본 셸 실행 |
 | `ime-ctrl-keys.py` | 한글 입력기용 `ctrl+<영문키>` 매핑 생성 스크립트 (`geninclude`, 실행 권한 필요) |
 

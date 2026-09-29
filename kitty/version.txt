@@ -1,0 +1,2 @@
+kitty 0.49.1
+font-d2coding-nerd-font 3.5.1
