@@ -11,6 +11,7 @@ macOS 개인 설정 저장소. 특정 사용자 경로에 의존하지 않으며
 | `herdr/` | herdr (터미널 멀티플렉서) | `~/.config/herdr/config.toml` | 파일 심볼릭 링크 | [herdr/README.md](herdr/README.md) |
 | `karabiner/` | Karabiner-Elements | `~/.config/karabiner` | 폴더 심볼릭 링크 | [karabiner/README.md](karabiner/README.md) |
 | `zed/` | Zed 에디터 | `~/.config/zed/settings.json` | 파일 심볼릭 링크 | [zed/README.md](zed/README.md) |
+| `zsh/` | zsh (Oh My Zsh + p10k) | `~/.zshrc` | 파일 심볼릭 링크 | [zsh/README.md](zsh/README.md) |
 
 ## 적용 순서
 
