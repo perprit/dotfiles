@@ -70,5 +70,4 @@ switch_ascii_input_source_in_prefix = true
 # Claude Code/Codex 처럼 커서를 직접 그리는 TUI 에서 한글 조합 후보창이 커서를 따라가게 함
 reveal_hidden_cursor_for_cjk_ime = true
 cjk_ime_agents = ["claude", "codex"]
-# kitty 의 beam 커서와 맞춤
-cjk_ime_cursor_shape = "steady_bar"
+cjk_ime_cursor_shape = "bar"
