@@ -39,3 +39,4 @@ herdr config check                          # config: ok
 - 한글 입력기: prefix(`ctrl+b`) 자체는 kitty의 `ime-ctrl-keys.py` 매핑으로, prefix 뒤의 키는 `[experimental] switch_ascii_input_source_in_prefix = true`로 처리한다. `[keys]`에 바인딩을 추가해도 kitty 쪽 매핑을 따로 늘릴 필요 없다.
 - `[session] resume_agents_on_restore = true`는 `herdr integration install claude`로 Claude Code 연동을 설치해야 동작한다.
 - `[theme] name = "terminal"`: kitty의 Sonokai 팔레트를 그대로 따른다.
+- 새 workspace(`prefix+shift+n`)는 `[[keys.command]]`로 `~/dev`에서 연다. `terminal.new_cwd`는 pane/tab/workspace 공통이라 workspace만 따로 정할 수 없어서, 기본 `new_workspace` 바인딩은 비워 두었다. 사이드바 마우스로 만드는 workspace는 여전히 `new_cwd = "follow"`를 따른다.
