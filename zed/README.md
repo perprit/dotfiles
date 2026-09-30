@@ -25,6 +25,14 @@ ln -sfn "$DOTFILES/zed/settings.json" "$target"
 
 Zed는 설정 파일 변경을 자동으로 감지한다. 처음 적용할 때는 Zed를 재시작하면 `auto_install_extensions`에 적힌 확장(Sonokai 테마)이 자동으로 설치된다.
 
+### 노트북 (실험 기능)
+
+`settings.json`의 `feature_flags.notebooks`와 함께 환경변수 `LOCAL_NOTEBOOK_DEV=1`이 있어야 `.ipynb`가 노트북 에디터로 열린다. `launchctl setenv`는 재부팅하면 사라지므로 부팅 후 다시 실행하고 Zed를 재시작한다.
+
+```sh
+launchctl setenv LOCAL_NOTEBOOK_DEV 1
+```
+
 ## 검증
 
 ```sh
