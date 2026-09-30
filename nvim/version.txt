@@ -1,4 +1,4 @@
-neovim 0.11.6
+neovim 0.12.5
 ripgrep 15.2.0
 tree-sitter-cli 0.27.0
 pyrefly 1.3.1
