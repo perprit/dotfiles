@@ -27,17 +27,26 @@ Zed는 설정 파일 변경을 자동으로 감지한다. 처음 적용할 때�
 
 ### 노트북 (실험 기능)
 
-`settings.json`의 `feature_flags.notebooks`와 함께 환경변수 `LOCAL_NOTEBOOK_DEV=1`이 있어야 `.ipynb`가 노트북 에디터로 열린다. `launchctl setenv`는 재부팅하면 사라지므로 부팅 후 다시 실행하고 Zed를 재시작한다.
+`settings.json`의 `feature_flags.notebooks`와 함께 환경변수 `LOCAL_NOTEBOOK_DEV=1`이 Zed 프로세스에 있어야 `.ipynb`가 노트북 에디터로 열린다. 로그인 시 GUI 세션에 이 값을 넣는 LaunchAgent를 링크하고 로드한다.
 
 ```sh
-launchctl setenv LOCAL_NOTEBOOK_DEV 1
+DOTFILES="${DOTFILES:-$HOME/dotfiles}"
+agent="$HOME/Library/LaunchAgents/local.dotfiles.zed-notebook-env.plist"
+mkdir -p "$HOME/Library/LaunchAgents"
+ln -sfn "$DOTFILES/zed/local.dotfiles.zed-notebook-env.plist" "$agent"
+launchctl bootout "gui/$(id -u)" "$agent" 2>/dev/null
+launchctl bootstrap "gui/$(id -u)" "$agent"
 ```
+
+로드한 뒤 Zed를 완전히 종료(`cmd-q`)하고 다시 켠다. 바로 확인하려면 `open --env LOCAL_NOTEBOOK_DEV=1 -a Zed`로 켜도 된다.
 
 ## 검증
 
 ```sh
 readlink "$HOME/.config/zed/settings.json"   # $DOTFILES/zed/settings.json
 ls "$HOME/Library/Application Support/Zed/extensions/installed"   # sonokai
+launchctl print "gui/$(id -u)/local.dotfiles.zed-notebook-env" | grep "last exit code"   # 0
+ps eww -p "$(pgrep -f 'Zed.app/Contents/MacOS/zed$')" | tr ' ' '\n' | grep LOCAL_NOTEBOOK_DEV   # LOCAL_NOTEBOOK_DEV=1
 ```
 
 ## 주의사항
