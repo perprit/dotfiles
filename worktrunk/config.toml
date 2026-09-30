@@ -1,0 +1,2 @@
+# 새 worktree를 저장소 안 .claude/worktrees/<branch> 에 만든다.
+worktree-path = "{{ repo_path }}/.claude/worktrees/{{ branch | sanitize }}"
