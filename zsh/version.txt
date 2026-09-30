@@ -1,5 +1,5 @@
 zsh 5.9
-fzf 0.70.0
-glow 2.1.1
-oh-my-zsh 157eb03
-powerlevel10k 7ff8361
+fzf 0.74.4
+glow 3.0.0
+oh-my-zsh 6421f8e
+powerlevel10k d05a1b0
