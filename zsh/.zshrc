@@ -116,6 +116,8 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 source <(fzf --zsh)
+# worktrunk: wt switch 가 현재 셸의 디렉터리를 바꾸게 한다 (compinit 뒤에 있어야 완성이 된다)
+eval "$(wt config shell init zsh)"
 export PATH="$HOME/.local/bin:$PATH"
 
 # --- Neovim override ---

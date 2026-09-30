@@ -5,7 +5,7 @@ Oh My Zsh + Powerlevel10k 기반 `~/.zshrc`.
 ## 설치
 
 ```sh
-brew install fzf glow
+brew install fzf glow worktrunk
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git \
   "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
@@ -36,6 +36,7 @@ exec zsh
 readlink "$HOME/.zshrc"        # $DOTFILES/zsh/.zshrc
 bindkey '^[[1;3D'              # backward-word
 bindkey '^[[1;3C'              # forward-word
+whence -w wt                   # wt: function
 ```
 
 ## 주의사항
