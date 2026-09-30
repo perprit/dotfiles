@@ -37,6 +37,11 @@
       },
     },
   },
+  // .ipynb 노트북 에디터(실험 기능). 환경변수 LOCAL_NOTEBOOK_DEV=1도 필요하다(README 참고).
+  "feature_flags": {
+    "notebooks": "on",
+    "tabular-data-preview": "on",
+  },
   "git": {
     "inline_blame": {
       "enabled": true,
