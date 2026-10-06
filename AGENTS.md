@@ -13,7 +13,7 @@ macOS 개인 설정 저장소. 특정 사용자 경로에 의존하지 않으며
 | `zed/` | Zed 에디터 | `~/.config/zed/settings.json` | 파일 심볼릭 링크 | [zed/README.md](zed/README.md) |
 | `zsh/` | zsh (Oh My Zsh + p10k) | `~/.zshrc` | 파일 심볼릭 링크 | [zsh/README.md](zsh/README.md) |
 | `worktrunk/` | worktrunk (`wt`) | `~/.config/worktrunk/config.toml` | 파일 심볼릭 링크 | [worktrunk/README.md](worktrunk/README.md) |
-| `claude/` | Claude Code 전역 규칙 | `~/.claude/CLAUDE.md`, `~/.claude/AGENTS.md` | 파일 심볼릭 링크 | [claude/README.md](claude/README.md) |
+| `claude/` | Claude Code, Codex 전역 규칙 | `~/.claude/CLAUDE.md`, `~/.codex/AGENTS.md` | 파일 심볼릭 링크 | [claude/README.md](claude/README.md) |
 
 ## 적용 순서
 
