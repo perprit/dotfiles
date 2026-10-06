@@ -119,6 +119,8 @@ source <(fzf --zsh)
 # worktrunk: wt switch 가 현재 셸의 디렉터리를 바꾸게 한다 (compinit 뒤에 있어야 완성이 된다)
 eval "$(wt config shell init zsh)"
 export PATH="$HOME/.local/bin:$PATH"
+# opencode: 공식 설치 스크립트 위치. 설치되지 않은 머신이면 건너뛴다.
+[[ ! -d ~/.opencode/bin ]] || export PATH="$HOME/.opencode/bin:$PATH"
 
 # --- Neovim override ---
 alias vim='nvim'

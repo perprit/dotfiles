@@ -4,3 +4,4 @@ glow 3.0.0
 oh-my-zsh 6421f8e
 powerlevel10k d05a1b0
 worktrunk 0.80.0
+opencode 2.0.24
